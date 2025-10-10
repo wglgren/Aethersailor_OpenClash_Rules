@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 277
+# TOTAL: 286
 
 payload:
   - '*m-team*'
@@ -19,6 +19,7 @@ payload:
   - '+.52muban.com'
   - '+.55555.ink'
   - '+.657192.com'
+  - '+.6v520.net'
   - '+.737698.xyz'
   - '+.7sef.com'
   - '+.900cha.com'
@@ -39,6 +40,7 @@ payload:
   - '+.belimked.com'
   - '+.bgm.tv'
   - '+.bochk.com'
+  - '+.boyuemobile.com'
   - '+.bsbsb.top'
   - '+.canghaiip.com'
   - '+.centbrowser.net'
@@ -152,6 +154,7 @@ payload:
   - '+.ipshu.com'
   - '+.istoreos.com'
   - '+.jsdelivr.net'
+  - '+.julebu.co'
   - '+.jxjktzjt.com'
   - '+.jxpp.com'
   - '+.kaspersky-labs.com'
@@ -178,6 +181,7 @@ payload:
   - '+.micu.hk'
   - '+.mifeng.plus'
   - '+.mobai.sbs'
+  - '+.modelscope.net'
   - '+.msftconnecttest.com'
   - '+.msftncsi.com'
   - '+.mslmc.net'
@@ -210,6 +214,8 @@ payload:
   - '+.ptlgs.org'
   - '+.qiankunshopping.com'
   - '+.qianuni.com'
+  - '+.qianxuecloud.com'
+  - '+.qianxueyunke.com'
   - '+.qiaoxuesi.com'
   - '+.qinglue.com'
   - '+.redenmc.com'
@@ -269,6 +275,8 @@ payload:
   - '+.xixih.cc'
   - '+.xn--4kq62z5rby2qupq9ub.top'
   - '+.xopenbeta.com'
+  - '+.xzsckj.com'
+  - '+.ydayc.com'
   - '+.yiso.fun'
   - '+.yongyu.xyz'
   - '+.yooc.me'
@@ -277,6 +285,7 @@ payload:
   - '+.z6e.com'
   - '+.zctnet.top'
   - '+.zeekrline.com'
+  - '+.zhixingyunke.com'
   - '+.zhongancloud.com'
   - '+.znnu.com'
   - '+.znztv.com'
