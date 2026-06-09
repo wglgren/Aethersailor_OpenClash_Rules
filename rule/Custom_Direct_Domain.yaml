@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 613
+# TOTAL: 621
 
 payload:
   - '*m-team*'
@@ -104,7 +104,6 @@ payload:
   - '+.bunny.net'
   - '+.canghaiip.com'
   - '+.cangjie-lang.net'
-  - '+.cc.cd'
   - '+.ccw.site'
   - '+.cdn.ist'
   - '+.centbrowser.net'
@@ -254,6 +253,7 @@ payload:
   - '+.halvie.com'
   - '+.ham.xin'
   - '+.hangnakeji.com'
+  - '+.haofanhuoban.com'
   - '+.haoxueche.com'
   - '+.harbourmooc.com'
   - '+.hbcof.com'
@@ -269,6 +269,7 @@ payload:
   - '+.hnxzctec.com'
   - '+.hongxingdl.com'
   - '+.hongxingdl.love'
+  - '+.hprtupgrade.com'
   - '+.hsbc.com.hk'
   - '+.hstbroker.com'
   - '+.hszq6.com'
@@ -296,6 +297,7 @@ payload:
   - '+.ilucky.net'
   - '+.imacos.top'
   - '+.immortalwrt.org'
+  - '+.indeedpower.com'
   - '+.infini-fantasy.com'
   - '+.iosgujian.com'
   - '+.iot889.com'
@@ -303,6 +305,7 @@ payload:
   - '+.ip159.com'
   - '+.ip6.seeip.org'
   - '+.ipapi.co'
+  - '+.iposl.com'
   - '+.ipshu.com'
   - '+.istoreos.com'
   - '+.itptg.com'
@@ -384,6 +387,7 @@ payload:
   - '+.mykuaidi.com'
   - '+.myrny.xin'
   - '+.myshopex.com'
+  - '+.mystery0.vip'
   - '+.naixi.com'
   - '+.nanhuabx.com'
   - '+.nanshe-tech.com'
@@ -497,6 +501,7 @@ payload:
   - '+.tcy365.net'
   - '+.tdrgame.top'
   - '+.terra-master.com'
+  - '+.terrabbs.ink'
   - '+.tggfl.com'
   - '+.theluyuan.com'
   - '+.thinkerride.com'
@@ -505,6 +510,7 @@ payload:
   - '+.timbrd.com'
   - '+.tixue.net'
   - '+.tmallyc.com'
+  - '+.tmwanba.com'
   - '+.tnas.link'
   - '+.tnas.online'
   - '+.tongkask.com'
@@ -520,6 +526,7 @@ payload:
   - '+.u-carloan.com'
   - '+.uascent-iot.com'
   - '+.ugdocker.link'
+  - '+.ugnas.cloud'
   - '+.ulife.group'
   - '+.us.ci'
   - '+.vanjee.net'
@@ -565,6 +572,7 @@ payload:
   - '+.xinghaiwaimai.com'
   - '+.xingyaozhilian.com'
   - '+.xiqueer.com'
+  - '+.xiuxitong.com'
   - '+.xiwang.com'
   - '+.xixih.cc'
   - '+.xkkapk.com'
