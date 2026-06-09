@@ -3,45 +3,88 @@
 # 来源：M3U 播放列表提取
 # ==========================================
 
-# 1. Akamai CDN (仅限播放列表中出现的具体子域名)
-DOMAIN,vs-hls-push-ww-live.akamaized.net
-DOMAIN,pb-qyrvophnifz47.akamaized.net
-DOMAIN,pb-ehs1glsha1juy.akamaized.net
-DOMAIN,pb-0n3n2ej0w8pl9.akamaized.net
-DOMAIN,pb-iiczlgfysam0q.akamaized.net
-DOMAIN,d2d98ykcmmhgd4.cloudfront.net
-DOMAIN,dbrb49pjoymg4.cloudfront.net
-DOMAIN,d1qxs0m523lkbc.cloudfront.net
 
-# 2. AWS & CloudFront (仅限 xumo, plex, warner 等特定子域名)
-DOMAIN,dai.google.com
-DOMAIN,amg00803-cnnfast-amg00803c6-lg-gb-5355.playouts.now.amagi.tv
-DOMAIN,amg01076-lightningintern-gbnews-samsunguk-0lu52.amagi.tv
-DOMAIN,amg00106-france24-france24-samsunguk-qvpp8.amagi.tv
-DOMAIN,amg01438-ewscrippscompan-courttv-tablo-nbcc7.amagi.tv
-DOMAIN,amg01442-pelmorexcorp-theweathernetwork-lgca-f0v2i.amagi.tv
-DOMAIN,amg00803-cnnfastinternational-cnniall-lggb.playouts.now.amagi.tv
-DOMAIN,amg00106-france24-france24-samsunguk-qvpp8.playouts.now.amagi.tv
 
-# 3. 特定服务域名 (不建议拦截主域名)
-DOMAIN,s11host2.localnow.api.cms.amdvids.com
-DOMAIN,turnerlive.warnermediacdn.com
-DOMAIN,rt-glb.rttv.com
-DOMAIN,tv-trtworld.medya.trt.com.tr
-DOMAIN,live-hls-web-aje-gcp.thehlive.com
-DOMAIN,english-livebkali.cgtn.com
-DOMAIN,realsport.scalecdn.co
-DOMAIN,hardcoremedia.xyz
-DOMAIN,psk-sdk.ddno.us
-DOMAIN,king-pro8k.xyz
-DOMAIN,asmr4k.world
-DOMAIN,wickediptv.xyz
-DOMAIN,world-protv.club
-DOMAIN,my.atrupo4k.com
-DOMAIN,wx78.vpn-cloud.icu
-DOMAIN,802017341873.plus-26.com
-DOMAIN,103trkm25.xyz
-DOMAIN,86.87.15.10
-DOMAIN,23.237.104.106
-DOMAIN,23.239.31.26
-DOMAIN,190.11.225.124
+rules:
+  # ==================================================
+  # IPTV / FAST 流媒体 精准强制代理规则（最终版）
+  # ==================================================
+
+  # 1. IP 地址（最安全）
+  - IP-CIDR,89.187.179.148/32,no-resolve
+  - IP-CIDR,23.237.104.106/32,no-resolve
+  - IP-CIDR,86.87.15.10/32,no-resolve
+  - IP-CIDR,163.172.64.96/32,no-resolve
+  - IP-CIDR,190.11.225.124/32,no-resolve
+  - IP-CIDR,23.239.31.26/32,no-resolve
+  - IP-CIDR,181.215.195.227/32,no-resolve
+  - IP-CIDR,185.217.168.164/32,no-resolve
+
+  # 2. Akamaized 精准子域名
+  - DOMAIN-SUFFIX,pb-*.akamaized.net
+  - DOMAIN-SUFFIX,nmx1ota.akamaized.net
+  - DOMAIN-SUFFIX,vs-hls-push-ww-live.akamaized.net
+  - DOMAIN-SUFFIX,dwamdstream102.akamaized.net
+
+  # 3. CloudFront 具体子域名（已精准化）
+  - DOMAIN-SUFFIX,d2d98ykcmmhgd4.cloudfront.net
+  - DOMAIN-SUFFIX,dbrb49pjoymg4.cloudfront.net
+  - DOMAIN-SUFFIX,d4whmvwm0rdvi.cloudfront.net
+  - DOMAIN-SUFFIX,d1qxs0m523lkbc.cloudfront.net
+  - DOMAIN-SUFFIX,d3bd0tgyk368z1.cloudfront.net
+  - DOMAIN-SUFFIX,d2irko5f9gt1c5.cloudfront.net
+  - DOMAIN-SUFFIX,d11r33s5i066xh.cloudfront.net
+  - DOMAIN-SUFFIX,d1e9r0b71zfwk7.cloudfront.net
+  - DOMAIN-SUFFIX,d3hqevbyoxtkoi.cloudfront.net
+  - DOMAIN-SUFFIX,d3ca4qxsdzlrju.cloudfront.net
+  - DOMAIN-SUFFIX,d6ef3usc6d9cl.cloudfront.net
+  - DOMAIN-SUFFIX,d1b65xiaowu9wd.cloudfront.net
+  - DOMAIN-SUFFIX,d21vn5eki5qsdi.cloudfront.net
+  - DOMAIN-SUFFIX,dh18i7whff86v.cloudfront.net
+
+  # 4. Amagi / Roku / 主流 FAST 平台
+  - DOMAIN-SUFFIX,playouts.now.amagi.tv
+  - DOMAIN-SUFFIX,now.amagi.tv
+  - DOMAIN-SUFFIX,amg*.amagi.tv
+  - DOMAIN-SUFFIX,aka-live1050.delivery.roku.com
+  - DOMAIN-SUFFIX,transmit.live
+  - DOMAIN-SUFFIX,aenetworks.global.transmit.live
+
+  # 5. 自定义 IPTV 服务器 & 其他关键域名
+  - DOMAIN-SUFFIX,sharewithyou.dpdns.org
+  - DOMAIN-SUFFIX,garyshare.sharewithyou.dpdns.org
+  - DOMAIN-SUFFIX,pddl.sharewithyou.dpdns.org
+  - DOMAIN-SUFFIX,802017341873.plus-26.com
+  - DOMAIN-SUFFIX,103trkm25.xyz
+  - DOMAIN-SUFFIX,wx78.vpn-cloud.icu
+  - DOMAIN-SUFFIX,psk-sdk.ddno.us
+  - DOMAIN-SUFFIX,realsport.scalecdn.co
+  - DOMAIN-SUFFIX,iptvboss.xyz
+  - DOMAIN-SUFFIX,wickediptv.xyz
+  - DOMAIN-SUFFIX,world-protv.club
+  - DOMAIN-SUFFIX,king-pro8k.xyz
+  - DOMAIN-SUFFIX,hardcoremedia.xyz
+  - DOMAIN-SUFFIX,falcontv.top
+  - DOMAIN-SUFFIX,maxgoldx.xyz
+  - DOMAIN-SUFFIX,lonewolftvpr.com
+  - DOMAIN-SUFFIX,hydraa.st
+  - DOMAIN-SUFFIX,ftv1.b-cdn.net
+  - DOMAIN-SUFFIX,turnerlive.warnermediacdn.com
+  - DOMAIN-SUFFIX,rt-glb.rttv.com
+  - DOMAIN-SUFFIX,live-hls-web-aje-gcp.thehlive.com
+  - DOMAIN-SUFFIX,epgshare01.online
+  - DOMAIN-SUFFIX,tv-trtworld.medya.trt.com.tr
+  - DOMAIN-SUFFIX,english-livebkali.cgtn.com
+  - DOMAIN-SUFFIX,cdn1host.online
+  - DOMAIN-SUFFIX,bozztv.com
+
+  # 6. 辅助域名（EPG、Logo 等）
+  - DOMAIN-SUFFIX,github.com
+  - DOMAIN-SUFFIX,raw.githubusercontent.com
+  - DOMAIN-SUFFIX,provider-static.plex.tv
+  - DOMAIN-SUFFIX,schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com
+  - DOMAIN-SUFFIX,a.jsrdn.com
+
+  # ==================================================
+  # 放置位置：规则列表最顶部
+  # ==================================================
