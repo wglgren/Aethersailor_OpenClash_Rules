@@ -1,0 +1,47 @@
+# ==========================================
+# Garyshare IPTV 专用规则 - 精准子域名与IP
+# 来源：M3U 播放列表提取
+# ==========================================
+
+# 1. Akamai CDN (仅限播放列表中出现的具体子域名)
+DOMAIN,vs-hls-push-ww-live.akamaized.net
+DOMAIN,pb-qyrvophnifz47.akamaized.net
+DOMAIN,pb-ehs1glsha1juy.akamaized.net
+DOMAIN,pb-0n3n2ej0w8pl9.akamaized.net
+DOMAIN,pb-iiczlgfysam0q.akamaized.net
+DOMAIN,d2d98ykcmmhgd4.cloudfront.net
+DOMAIN,dbrb49pjoymg4.cloudfront.net
+DOMAIN,d1qxs0m523lkbc.cloudfront.net
+
+# 2. AWS & CloudFront (仅限 xumo, plex, warner 等特定子域名)
+DOMAIN,dai.google.com
+DOMAIN,amg00803-cnnfast-amg00803c6-lg-gb-5355.playouts.now.amagi.tv
+DOMAIN,amg01076-lightningintern-gbnews-samsunguk-0lu52.amagi.tv
+DOMAIN,amg00106-france24-france24-samsunguk-qvpp8.amagi.tv
+DOMAIN,amg01438-ewscrippscompan-courttv-tablo-nbcc7.amagi.tv
+DOMAIN,amg01442-pelmorexcorp-theweathernetwork-lgca-f0v2i.amagi.tv
+DOMAIN,amg00803-cnnfastinternational-cnniall-lggb.playouts.now.amagi.tv
+DOMAIN,amg00106-france24-france24-samsunguk-qvpp8.playouts.now.amagi.tv
+
+# 3. 特定服务域名 (不建议拦截主域名)
+DOMAIN,s11host2.localnow.api.cms.amdvids.com
+DOMAIN,turnerlive.warnermediacdn.com
+DOMAIN,rt-glb.rttv.com
+DOMAIN,tv-trtworld.medya.trt.com.tr
+DOMAIN,live-hls-web-aje-gcp.thehlive.com
+DOMAIN,english-livebkali.cgtn.com
+DOMAIN,realsport.scalecdn.co
+DOMAIN,hardcoremedia.xyz
+DOMAIN,psk-sdk.ddno.us
+DOMAIN,king-pro8k.xyz
+DOMAIN,asmr4k.world
+DOMAIN,wickediptv.xyz
+DOMAIN,world-protv.club
+DOMAIN,my.atrupo4k.com
+DOMAIN,wx78.vpn-cloud.icu
+DOMAIN,802017341873.plus-26.com
+DOMAIN,103trkm25.xyz
+DOMAIN,86.87.15.10
+DOMAIN,23.237.104.106
+DOMAIN,23.239.31.26
+DOMAIN,190.11.225.124
