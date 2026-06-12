@@ -9,18 +9,56 @@ payload:
   - DOMAIN-SUFFIX,carel.com
 
 
-
-# Tiger Trade 直连（推荐 PROXY 或 DIRECT，根据你的需求）
-  - DOMAIN-SUFFIX,itiger.com
+# ==================== Tiger Trade / 老虎证券 ====================
   - DOMAIN-SUFFIX,tigerbrokers.com
+  - DOMAIN-SUFFIX,itiger.com
   - DOMAIN-SUFFIX,itigerup.com
   - DOMAIN-SUFFIX,tigerfintech.com
-  - DOMAIN-SUFFIX,tiger.com
+  - DOMAIN-SUFFIX,tigertrade.app
+  - DOMAIN-SUFFIX,openapi.tigerfintech.com
+  - DOMAIN-SUFFIX,quant.itigerup.com
+  - DOMAIN-SUFFIX,api.tigerbrokers.com
+  - DOMAIN-SUFFIX,push.tigerfintech.com
+  - DOMAIN-KEYWORD,tigerbrokers
+  - DOMAIN-KEYWORD,tigerfintech
 
-  # 子域名 wildcard（更全面）
+    # 子域名 wildcard（更全面）
   - DOMAIN-SUFFIX,jpush.cn          # 推送服务
   - DOMAIN-SUFFIX,jiguang.cn
 
   # 或者用 DOMAIN-KEYWORD 更宽松
-  # - DOMAIN-KEYWORD,tiger
-  # - DOMAIN-KEYWORD,itiger
+  - DOMAIN-KEYWORD,tiger
+  - DOMAIN-KEYWORD,itiger
+
+
+# ================== Longbridge / 长桥证券 ==================
+# 官方主要域名
+  - DOMAIN-SUFFIX,lbkrs.com,Longbridge
+  - DOMAIN-SUFFIX,longbridge.com,Longbridge
+  - DOMAIN-SUFFIX,longbridge.com.cn,Longbridge
+  - DOMAIN-SUFFIX,longportapp.com,Longbridge
+  - DOMAIN-SUFFIX,longport.com,Longbridge
+
+# API / 交易 / 行情核心域名
+  - DOMAIN-SUFFIX,openapi.longbridge.com,Longbridge
+  - DOMAIN-SUFFIX,openapi.lbkrs.com,Longbridge
+  - DOMAIN-SUFFIX,trade.longbridge.com,Longbridge
+  - DOMAIN-SUFFIX,trade.lbkrs.com,Longbridge
+  - DOMAIN-SUFFIX,quote.longbridge.com,Longbridge
+  - DOMAIN-SUFFIX,quote.lbkrs.com,Longbridge
+  - DOMAIN-SUFFIX,m.lbkrs.com,Longbridge
+  - DOMAIN-SUFFIX,geotest.lbkrs.com,Longbridge
+  - DOMAIN-SUFFIX,assets.lbctrl.com,Longbridge
+
+# 网页/账户/支持相关
+  - DOMAIN-SUFFIX,web.lbkrs.com,Longbridge
+  - DOMAIN-SUFFIX,app.longbridgehk.com,Longbridge
+  - DOMAIN-SUFFIX,longbridgewhale.com,Longbridge
+  - DOMAIN-SUFFIX,open.longbridge.com,Longbridge
+  - DOMAIN-SUFFIX,developers.longbridge.com,Longbridge
+
+# 其他可能出现的子域名（使用 DOMAIN-KEYWORD 更全面）
+  - DOMAIN-KEYWORD,lbctrl,Longbridge
+  - DOMAIN-KEYWORD,lbkrs,Longbridge
+  - DOMAIN-KEYWORD,longbridge,Longbridge
+  - DOMAIN-KEYWORD,longport,Longbridge
