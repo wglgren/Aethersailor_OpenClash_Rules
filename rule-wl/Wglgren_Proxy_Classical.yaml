@@ -4,7 +4,23 @@
 # TOTAL: 16
 
 payload:
+
+# Carel 直连（推荐 PROXY 或 DIRECT，根据你的需求）
   - DOMAIN-SUFFIX,carel.com
 
+
+
+# Tiger Trade 直连（推荐 PROXY 或 DIRECT，根据你的需求）
+  - DOMAIN-SUFFIX,itiger.com
   - DOMAIN-SUFFIX,tigerbrokers.com
   - DOMAIN-SUFFIX,itigerup.com
+  - DOMAIN-SUFFIX,tigerfintech.com
+  - DOMAIN-SUFFIX,tiger.com
+
+  # 子域名 wildcard（更全面）
+  - DOMAIN-SUFFIX,jpush.cn          # 推送服务
+  - DOMAIN-SUFFIX,jiguang.cn
+
+  # 或者用 DOMAIN-KEYWORD 更宽松
+  # - DOMAIN-KEYWORD,tiger
+  # - DOMAIN-KEYWORD,itiger
