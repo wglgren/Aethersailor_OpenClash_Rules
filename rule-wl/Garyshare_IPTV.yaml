@@ -79,7 +79,6 @@ rules:
   - DOMAIN-SUFFIX,bozztv.com
 
   # 6. 辅助域名（EPG、Logo 等）
-  - DOMAIN-SUFFIX,github.com
   - DOMAIN-SUFFIX,raw.githubusercontent.com
   - DOMAIN-SUFFIX,provider-static.plex.tv
   - DOMAIN-SUFFIX,schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com
