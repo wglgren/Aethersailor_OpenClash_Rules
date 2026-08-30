@@ -2,6 +2,27 @@
 
 本目录提供两个 OpenClash `dev` 版安装器和一个 CPU 架构检测脚本，适用于 OpenWrt 和 ImmortalWrt，兼容 `opkg` 与 `apk` 包管理器、`fw3`（基于 `iptables`）与 `fw4`（基于 `nftables`）防火墙，以及 Meta 与 Smart 内核。
 
+## 运行前确认
+
+运行安装器前，确认以下条件：
+
+- 设备运行 OpenWrt 或 ImmortalWrt，并使用 `opkg` 或 `apk`；其他发行版和包管理器不在支持范围内。
+- 使用 `root` 用户通过 SSH 执行命令。
+- 当前 `distfeeds` 中至少包含一个标准 `/releases/` 或 `/snapshots/` 仓库路径。安装器无法据此构造临时软件源时，会在修改软件源前停止。
+- 设备能够访问安装器使用的软件源镜像、jsDelivr、代理下载源或 GitHub。内核、Geo、Chnroute 和订阅等远程资源仍受网络可用性影响。
+- 已保存重要配置，并可以在插件或网络异常时重新通过 SSH 或本地管理界面连接设备。
+
+> [!WARNING]
+> 两个安装器都会覆盖重装 OpenClash、写入少量 OpenClash UCI 设置、启用服务并重启 OpenClash。不要在无法接受服务中断时执行。
+
+## 修改范围
+
+- **完整安装或更新：** 临时切换标准发行版软件源以安装依赖，覆盖重装 OpenClash，调用内核、Geo、Chnroute、订阅和用户预设流程，然后重启 OpenClash。安装器会在依赖阶段结束或中断时恢复运行前的软件源配置。
+- **只安装或更新插件与内核：** 临时切换软件源以安装依赖，覆盖重装 OpenClash，调用内核更新流程，然后重启 OpenClash；不会执行完整安装器额外的 Geo、Chnroute、订阅和用户预设流程。
+- **只检测 CPU 架构：** 读取本机架构和 CPU 特征并输出对应的 OpenClash 内核架构，不安装软件包、不写入 UCI，也不重启服务。
+
+继续前请根据需要选择一种命令，不要同时运行两个安装器。
+
 ## 快速开始
 
 完整安装或更新（插件、内核、Smart 模型、Geo、Chnroute、订阅和用户预设）：
@@ -24,8 +45,6 @@ sh /tmp/install_openclash.sh
 wget -O /tmp/check_cpu_version.sh 'https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/shell/check_cpu_version.sh' &&
 sh /tmp/check_cpu_version.sh
 ```
-
-使用 `root` 用户运行安装器。安装器会安装软件包、写入少量 OpenClash UCI 设置并重启 OpenClash。
 
 ## 终端显示
 
@@ -53,20 +72,22 @@ sh /tmp/check_cpu_version.sh
 
 1. 识别 OpenWrt 或 ImmortalWrt，以及 `opkg` 或 `apk`；
 2. 使用 `cp -p` 备份当前 `distfeeds`；
-3. 在任何 `opkg update` 或 `apk update` 之前直接切换到指定镜像；
+3. 忽略原软件源域名，将标准发行版仓库路径写入临时 CERNET 软件源；
 4. 更新索引并安装依赖；
 5. 无论成功、失败还是收到 INT、TERM、HUP，都恢复运行前的完整软件源配置。
 
 镜像映射如下：
 
-| 发行版 | 识别的基础地址 | 本次运行使用的镜像 |
+| 发行版 | 当前软件源 | 本次运行使用的镜像 |
 | --- | --- | --- |
-| ImmortalWrt | `downloads.immortalwrt.org`、`mirrors.vsean.net/openwrt` | `mirror.nju.edu.cn/immortalwrt` |
-| OpenWrt | `downloads.openwrt.org` | `mirrors.ustc.edu.cn/openwrt` |
+| ImmortalWrt | 任意包含标准 `/releases/` 或 `/snapshots/` 路径的软件源 | `mirrors.cernet.edu.cn/immortalwrt` |
+| OpenWrt | 任意包含标准 `/releases/` 或 `/snapshots/` 路径的软件源 | `cernet.mirrors.ustc.edu.cn/openwrt` |
 
-安装器只替换上述已知基础地址，后续版本、架构和仓库路径保持不变。第三方或自定义软件源原样保留。发行版已识别，但 `distfeeds` 中没有相应的已知地址时，安装器会明确失败，不会猜测地址或静默使用原始源。
+安装器不再维护软件源域名白名单。安装器从当前 `distfeeds` 提取标准的 `/releases/…` 或 `/snapshots/…` 路径，保留版本、目标、架构和仓库名称，并统一写入对应的 CERNET 根地址。原软件源域名、镜像前缀和不属于发行版标准仓库的条目不会进入临时软件源；运行前的完整文件仍会在依赖阶段结束时恢复。
 
-如果软件源已经指向该发行版的目标镜像，安装器会直接使用；未实际修改的文件不会被覆盖。
+OpenWrt 使用中国科学技术大学的 CERNET 网络入口。CERNET 智能聚合根地址当前可能把 OpenWrt snapshots 导向不包含 snapshots 的成员镜像，因此安装器不使用该不稳定路径。
+
+如果 `distfeeds` 中没有任何标准 `/releases/` 或 `/snapshots/` 仓库路径，安装器无法构造对应的 CERNET 地址，并会在修改软件源前停止。
 
 ### 2. 插件本体由安装器自行覆盖重装
 
